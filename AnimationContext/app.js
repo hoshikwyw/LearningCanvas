@@ -1,7 +1,7 @@
 let canvas = document.querySelector("canvas");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth/1.1;
+canvas.height = window.innerHeight/1.1;
 
 let c = canvas.getContext("2d");
 
@@ -50,8 +50,10 @@ function Circle(x, y, dx, dy, radius) {
     let b = Math.floor(Math.random() * 256);
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.fillStyle = `#A27B5C`;
+    c.fillStyle = `#C9CBFF`;
+    c.strokeStyle = `#D2F5E3`;
     c.fill();
+    c.stroke();
   };
   this.update = function () {
     if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
